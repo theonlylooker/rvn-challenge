@@ -1,9 +1,9 @@
-import { useState } from "react";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="">hola</h1>
+    <div className="App bg-rvnBG h-screen p-8">
+      <SideBar />
     </div>
   );
 }
