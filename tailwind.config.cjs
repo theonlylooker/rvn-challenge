@@ -8,6 +8,7 @@ module.exports = {
         rvnComponentBG: "#2C2F33",
         rvnRed: "#DA584B",
         rvnRedGradient: "#D24D4D10",
+        rvnTextSecondary: "#94979A",
       },
     },
   },
