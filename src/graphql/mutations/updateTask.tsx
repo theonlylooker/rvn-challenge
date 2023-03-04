@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-const GET_TASKS = gql`
-  query ($task: FilterTaskInput!) {
-    tasks(input: $task) {
+const UPDATE_TASK = gql`
+  mutation ($task: CreateTaskInput!) {
+    updateTask(input: $task) {
       dueDate
       id
       name
@@ -14,4 +14,4 @@ const GET_TASKS = gql`
   }
 `;
 
-export default GET_TASKS;
+export default UPDATE_TASK;
