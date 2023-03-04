@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         rvnBG: "#222528",
         rvnComponentBG: "#2C2F33",
+        rvnModalBG: "#393D41",
         rvnRed: "#DA584B",
         rvnRedOpacity: "#DA584B10",
         rvnRedGradient: "#D24D4D10",
