@@ -3,9 +3,11 @@ import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="App bg-rvnBG h-screen p-8 flex gap-8">
-      <SideBar />
-      <Content />
+    <div className="App h-full bg-rvnBG">
+      <div className="h-screen p-8 flex gap-8">
+        <SideBar />
+        <Content />
+      </div>
     </div>
   );
 }

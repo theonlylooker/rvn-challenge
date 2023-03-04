@@ -1,104 +1,54 @@
 import React from "react";
-import { gql } from "@apollo/client/core";
 import { useQuery } from "@apollo/client/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-enum PointEstimate {
-  EIGHT,
-  FOUR,
-  ONE,
-  TWO,
-  ZERO,
-}
-
-enum Status {
-  BACKLOG,
-  CANCELLED,
-  DONE,
-  IN_PROGRESS,
-  TODO,
-}
-
-enum TaskTag {
-  ANDROID,
-  IOS,
-  NODE_JS,
-  RAILS,
-  REACT,
-}
-
-interface Task {
-  createdAt: Date;
-  dueDate: Date;
-  id: number;
-  name: string;
-  position: number;
-  pointEstimate: PointEstimate;
-  status: Status;
-  tags: TaskTag[];
-}
-interface TasksQueryResponse {
-  tasks: Task[];
-}
-
-const GET_TASKS = gql`
-  query ($user: FilterTaskInput!) {
-    tasks(input: $user) {
-      createdAt
-      dueDate
-      id
-      name
-      pointEstimate
-      position
-      status
-      tags
-    }
-  }
-`;
+import Card from "./Card";
+import { TasksQueryResponse, Status, Task } from "../types/types";
+import GET_TASKS from "../graphql/queries/getTasks";
 
 const ContentMain = () => {
   const { data, loading, error } = useQuery<TasksQueryResponse>(GET_TASKS, {
-    variables: { user: { status: "BACKLOG" } },
+    variables: { user: {} },
   });
-  return (
-    <div className="grid grid-cols-3 text-white">
-      <div>
-        {data?.tasks.map((task, index) => (
-          <>{task.status}</>
-        ))}
+  let filterData: { [key in keyof typeof Status]?: Task[] } = {};
+  if (loading) {
+    return (
+      <div className="grid ">
+        <h1>Loading...</h1>
       </div>
-      <div>
-        <h2>Working(03)</h2>
-        <div>
-          {/*Card*/}
-          <div>
-            {/*Card Header*/}
-            <div>
-              <p>Slack</p>
-            </div>
-            {/*Card Body*/}
-            <div></div>
-            {/*Card Footer*/}
-            <div></div>
-          </div>
+    );
+  }
+  if (data) {
+    data.tasks.forEach((item) => {
+      if (item.status in filterData) {
+        filterData[item.status]?.push(item);
+      } else {
+        filterData[item.status] = [item];
+      }
+    });
+  }
 
-          <div>a2</div>
+  return (
+    <div className="grid grid-cols-4 gap-96 text-white overflow-x-scroll">
+      {Object.entries(filterData).map((column) => (
+        <div className="w-max">
+          <h2 className="mb-5">
+            {column[0]} (0{column[1]?.length})
+          </h2>
+          <div className="flex flex-col gap-4">
+            {column[1]?.map((card) => (
+              <Card
+                key={card.id}
+                name={card.name}
+                dueDate={card.dueDate}
+                id={card.id}
+                pointEstimate={card.pointEstimate}
+                position={card.position}
+                status={card.status}
+                tags={card.tags}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      <div>
-        <h2>In Progress(03)</h2>
-        <div>
-          <div>b1</div>
-          <div>b2</div>
-        </div>
-      </div>
-      <div>
-        <h2>Completed(03)</h2>
-        <div>
-          <div>c1</div>
-          <div>c2</div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
