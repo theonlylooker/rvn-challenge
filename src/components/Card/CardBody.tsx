@@ -18,8 +18,8 @@ const CardBody: FC<CardBodyTypes> = ({ dueDate, pointEstimate, tags }) => {
           </CapsuleDefault>
         </div>
         <div className="flex gap-2">
-          {tags.map((tag) => (
-            <CapsuleDefault>{tag}</CapsuleDefault>
+          {tags.map((tag, index) => (
+            <CapsuleDefault key={index}>{tag}</CapsuleDefault>
           ))}
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import CardHeader from "./Card/CardHeader";
-import CardFooter from "./Card/CardFooter";
-import CardBody from "./Card/CardBody";
-import { Task } from "../types/types";
+import CardHeader from "./CardHeader";
+import CardFooter from "./CardFooter";
+import CardBody from "./CardBody";
+import { Task } from "../../types/types";
 
 const Card: FC<Task> = ({ name, dueDate, pointEstimate, tags }) => {
   return (

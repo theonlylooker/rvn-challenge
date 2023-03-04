@@ -1,12 +1,12 @@
 import React from "react";
 import { useQuery } from "@apollo/client/react";
-import Card from "./Card";
+import Card from "./Card/Card";
 import { TasksQueryResponse, Status, Task } from "../types/types";
 import GET_TASKS from "../graphql/queries/getTasks";
 
 const ContentMain = () => {
   const { data, loading, error } = useQuery<TasksQueryResponse>(GET_TASKS, {
-    variables: { user: {} },
+    variables: { task: {} },
   });
   let filterData: { [key in keyof typeof Status]?: Task[] } = {};
   if (loading) {
