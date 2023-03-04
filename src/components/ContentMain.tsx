@@ -11,8 +11,8 @@ const ContentMain = () => {
   let filterData: { [key in keyof typeof Status]?: Task[] } = {};
   if (loading) {
     return (
-      <div className="grid ">
-        <h1>Loading...</h1>
+      <div className="m-auto">
+        <h1 className="text-white">Loading...</h1>
       </div>
     );
   }
