@@ -22,7 +22,7 @@ const Modal: FC<ModalType> = ({ handleModal, modal }) => {
   };
   return (
     <div
-      className={`absolute top-1/3 left-1/4 bg-rvnModalBG rounded-md p-4 text-white ${
+      className={`absolute top-1/3 left-1/4 z-10 bg-rvnModalBG rounded-md p-4 text-white ${
         modal === true ? "block" : "hidden"
       }`}
     >
