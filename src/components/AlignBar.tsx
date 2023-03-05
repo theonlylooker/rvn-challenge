@@ -5,8 +5,11 @@ import {
   faBorderAll,
   faSquarePlus,
 } from "@fortawesome/free-solid-svg-icons";
+import Modal from "./modal/Modal";
+import useModal from "./hooks/useModal";
 
 const AlignBar = () => {
+  const { modal, handleModal } = useModal();
   return (
     <div className="flex justify-between text-2xl text-white">
       <div className="flex gap-2 items-center cursor-pointer">
@@ -18,12 +21,13 @@ const AlignBar = () => {
         </button>
       </div>
       <div>
-        <button>
+        <button onClick={handleModal}>
           <FontAwesomeIcon
             className="text-rvnRed border-none text-4xl z-10"
             icon={faSquarePlus}
           />
         </button>
+        <Modal handleModal={handleModal} modal={modal} />
       </div>
     </div>
   );

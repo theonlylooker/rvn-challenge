@@ -28,8 +28,8 @@ const ContentMain = () => {
 
   return (
     <div className="grid grid-cols-4 gap-96 text-white overflow-x-scroll">
-      {Object.entries(filterData).map((column) => (
-        <div className="w-max">
+      {Object.entries(filterData).map((column, index) => (
+        <div key={index} className="w-max">
           <h2 className="mb-5">
             {column[0]} (0{column[1]?.length})
           </h2>

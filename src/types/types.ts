@@ -22,19 +22,33 @@ export enum TaskTag {
     REACT,
 }
 
+export interface User{
+    fullName: string;
+    avatar: string;
+    email: string;
+    id: number;
+}
+
+export interface UserQueryResponse{
+    users: User[];
+}
+
 export interface Task {
     dueDate: Date;
-    id: number;
     name: string;
     position: number;
     pointEstimate: PointEstimate;
     status: Status;
     tags: TaskTag[];
+    id: number;
 }
 
 export interface TasksQueryResponse {
     tasks: Task[];
 }
+
+export type taskList = Task[];
+
 
 export interface CardHeaderType {
     name: string;
@@ -55,4 +69,16 @@ export interface CapsuleTypes {
     children: ReactNode;
   }
 
-export type taskList = Task[];
+export interface CreateTaskInput{
+    assigneeId?: string;
+    dueDate?: Date;
+    name?: string,
+    pointEstimate?: PointEstimate,
+    status: Status,
+    tags: TaskTag[]
+}
+
+export interface ModalType{
+    handleModal: ()=>void,
+    modal: boolean,
+}
