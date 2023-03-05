@@ -2,17 +2,17 @@ import React, { FC } from "react";
 import GET_USERS from "../../graphql/queries/getUsers";
 import { useQuery } from "@apollo/client";
 import { ModalType, UserQueryResponse } from "../../types/types";
-import useAddTask from "../hooks/useAddTask";
+import useCreateTask from "../hooks/useCreateTask";
 import Calendar from "../Calendar";
 
 const Modal: FC<ModalType> = ({ handleModal, modal }) => {
-  const { form, handleChangeForm, handleChangeDate, handleMutation } =
-    useAddTask();
+  const { form, handleChangeForm, handleChangeDate, handleCreate } =
+    useCreateTask();
   const { data, loading, error } = useQuery<UserQueryResponse>(GET_USERS);
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault;
-    handleMutation(e);
+    handleCreate(e);
     handleModal;
   };
 

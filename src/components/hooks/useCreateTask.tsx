@@ -8,7 +8,7 @@ const useAddTask = (): {
   form: CreateTaskInput;
   handleChangeForm: (e: React.SyntheticEvent) => void;
   handleChangeDate: (selectedDate: Date) => void;
-  handleMutation: (e: React.SyntheticEvent) => void;
+  handleCreate: (e: React.SyntheticEvent) => void;
 } => {
   const initialForm: CreateTaskInput = {
     status: "BACKLOG" as unknown as Status,
@@ -35,12 +35,12 @@ const useAddTask = (): {
   const handleChangeDate = (selectedDate: Date) => {
     setForm({ ...form, dueDate: selectedDate });
   };
-  const handleMutation = (e: React.SyntheticEvent) => {
+  const handleCreate = (e: React.SyntheticEvent) => {
     createTask({ variables: { task: form } });
     setForm(initialForm);
   };
 
-  return { form, handleChangeForm, handleChangeDate, handleMutation };
+  return { form, handleChangeForm, handleChangeDate, handleCreate };
 };
 
 export default useAddTask;

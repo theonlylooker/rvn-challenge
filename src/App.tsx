@@ -8,7 +8,6 @@ function App() {
       <div className="h-screen p-8 flex gap-8">
         <SideBar />
         <Content />
-        {/* <Modal /> */}
       </div>
     </div>
   );

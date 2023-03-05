@@ -40,7 +40,7 @@ export interface Task {
     pointEstimate: PointEstimate;
     status: Status;
     tags: TaskTag[];
-    id: number;
+    id: string;
 }
 
 export interface TasksQueryResponse {
@@ -52,6 +52,7 @@ export type taskList = Task[];
 
 export interface CardHeaderType {
     name: string;
+    id: string,
 }
 export interface CardBodyTypes{
     dueDate: Date,
@@ -76,6 +77,10 @@ export interface CreateTaskInput{
     pointEstimate?: PointEstimate,
     status: Status,
     tags: TaskTag[]
+}
+
+export interface DeleteTaskInput{
+    id: string
 }
 
 export interface CalendarType {

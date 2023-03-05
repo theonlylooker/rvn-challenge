@@ -17,7 +17,6 @@ module.exports = {
         rvnRedAction: "#EBA59E",
         rvnTextSecondary: "#94979A",
         rvnTextSecondaryOpacity: "#94979A10",
-        rvnTextSecondaryOpacity: "#94979A10",
       },
     },
   },
