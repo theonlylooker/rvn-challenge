@@ -78,6 +78,10 @@ export interface CreateTaskInput{
     tags: TaskTag[]
 }
 
+export interface CalendarType {
+    handleChangeDate: (selectedDate: Date) => void;
+  }
+
 export interface ModalType{
     handleModal: ()=>void,
     modal: boolean,
