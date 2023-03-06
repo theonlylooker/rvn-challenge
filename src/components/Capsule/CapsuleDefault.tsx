@@ -4,7 +4,7 @@ import Capsule from "./Capsule";
 
 const CapsuleDefault: FC<CapsuleTypes> = ({ children }) => {
   const capsuleDefault = (
-    <Capsule bg="default" color="default">
+    <Capsule bg="#94979A10" color="inherit">
       {children}
     </Capsule>
   );

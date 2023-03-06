@@ -2,13 +2,11 @@ import React, { FC, ReactNode } from "react";
 import { capsuleBaseTypes } from "../../types/types";
 
 const Capsule: FC<capsuleBaseTypes> = ({ bg, color, children }) => {
+  console.log(bg, "bg", color, "color");
   return (
     <div
-      className={` ${
-        bg === "default" ? "bg-rvnTextSecondaryOpacity" : `bg-${bg}`
-      } ${
-        color === "default" ? "bg-inherit" : `text-${color}`
-      }  py-2 px-4 font-bold rounded-md`}
+      className={`py-2 px-4 text-${color} font-bold rounded-md`}
+      style={{ backgroundColor: bg }}
     >
       {children}
     </div>

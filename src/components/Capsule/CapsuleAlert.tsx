@@ -4,7 +4,7 @@ import Capsule from "./Capsule";
 
 const CapsuleAlert: FC<CapsuleTypes> = ({ children }) => {
   const capsuleAlert = (
-    <Capsule bg="rvnRedOpacity" color="rvnRed">
+    <Capsule bg="#DA584B10" color="rvnRed">
       {children}
     </Capsule>
   );
