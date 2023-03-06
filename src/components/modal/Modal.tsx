@@ -41,7 +41,7 @@ const Modal: FC<ModalType> = ({ handleModal, modal }) => {
             name="pointEstimate"
             onChange={handleChangeForm}
             defaultValue="DEFAULT"
-            className="bg-rvnTextSecondaryOpacity appearance-none py-1 px-4 rounded-md"
+            className="bg-rvnTextSecondaryOpacity text-sm font-bold appearance-none py-1 px-4 rounded-md"
           >
             <option className="bg-rvnModalBG" value="DEFAULT" disabled>
               Estimate
@@ -67,7 +67,7 @@ const Modal: FC<ModalType> = ({ handleModal, modal }) => {
             name="assigneeId"
             defaultValue="DEFAULT"
             onChange={handleChangeForm}
-            className="bg-rvnTextSecondaryOpacity appearance-none py-1 px-4 rounded-md"
+            className="bg-rvnTextSecondaryOpacity text-sm font-bold appearance-none py-1 px-4 rounded-md"
           >
             <option disabled value="DEFAULT">
               Assignee
@@ -82,7 +82,7 @@ const Modal: FC<ModalType> = ({ handleModal, modal }) => {
             name="tags"
             defaultValue="DEFAULT"
             onChange={handleChangeForm}
-            className="bg-rvnTextSecondaryOpacity appearance-none py-1 px-4 rounded-md"
+            className="bg-rvnTextSecondaryOpacity text-sm font-bold appearance-none py-1 px-4 rounded-md"
           >
             <option className="bg-rvnModalBG" disabled value="DEFAULT">
               Label
