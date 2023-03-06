@@ -61,7 +61,7 @@ The application looks like this:
   ![](public/Screenshots//card_editOptions.PNG)
 
 A demo of the application can be found here:
-`Demo` : <https://github.com> https://theonlylooker.github.io/rvn-challenge/
+`Demo` : https://theonlylooker.github.io/rvn-challenge/
 
 # Technologies && Libraries
 The application was made using the follow technologies:
