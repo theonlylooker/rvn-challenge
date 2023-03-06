@@ -105,7 +105,7 @@ const Modal: FC<ModalType> = ({ handleModal, modal }) => {
           </select>
           <Calendar handleChangeDate={handleChangeDate} />
         </div>
-        <div className="flex gap-8 text-white justify-end">
+        <div className="flex gap-8 text-white justify-end text-sm">
           <button onClick={() => handleModal}>Cancel</button>
           <input
             type="submit"

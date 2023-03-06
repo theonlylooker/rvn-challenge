@@ -1,5 +1,4 @@
 import Content from "./components/Content";
-import Modal from "./components/modal/Modal";
 import SideBar from "./components/SideBar";
 
 function App() {
