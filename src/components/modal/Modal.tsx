@@ -35,6 +35,7 @@ const Modal: FC<ModalType> = ({ handleModal, modal }) => {
           onChange={handleChangeForm}
           name="name"
         />
+
         <div className="flex gap-4">
           <select
             name="pointEstimate"

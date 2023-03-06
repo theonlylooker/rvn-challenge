@@ -1,9 +1,8 @@
 import React, { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsis, faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { CardHeaderType } from "../../types/types";
 import useModal from "../hooks/useModal";
-import { useMutation } from "@apollo/client";
 import useDeleteTask from "../hooks/useDeleteTask";
 
 const CardHeader: FC<CardHeaderType> = ({ name, id }) => {
@@ -25,12 +24,16 @@ const CardHeader: FC<CardHeaderType> = ({ name, id }) => {
           modal === false ? "hidden" : "block"
         } absolute flex flex-col bg-rvnModalBG -right-1 top-5 p-3 rounded-md border-2 border-rvnTextSecondary`}
       >
-        <ul>
+        <ul className="flex flex-col gap-2">
           <li>
-            <button>Edit</button>
+            <button>
+              <FontAwesomeIcon className="mr-2" icon={faPen} /> Edit
+            </button>
           </li>
           <li>
-            <button onClick={handleDeleteButton}>Delete</button>
+            <button onClick={handleDeleteButton}>
+              <FontAwesomeIcon className="mr-2" icon={faTrash} /> Delete
+            </button>
           </li>
         </ul>
       </div>
